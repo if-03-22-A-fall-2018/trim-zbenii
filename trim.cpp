@@ -17,11 +17,11 @@ void trim(char* source_string, char* trimmed_string)
 {
 
   char testChar[STRLEN];
-  bool textHasStarted=false;
-  int count=0;
 
   // Remove leading blanks
   // remove_leading_blanks(string, testChar);
+  bool textHasStarted=false;
+  int count=0;
   for(int i=0;i<(int)strlen(source_string);i++)
   {
     if(textHasStarted==true)
