@@ -13,24 +13,26 @@
 #include "trim.h"
 #include <string.h>
 
-void trim(char* str1,char* trimmed1)
+void trim(char* source_string, char* trimmed_string)
 {
 
   char testChar[STRLEN];
   bool textHasStarted=false;
   int count=0;
 
-  for(int i=0;i<(int)strlen(str1);i++)
+  // Remove leading blanks
+  // remove_leading_blanks(string, testChar);
+  for(int i=0;i<(int)strlen(source_string);i++)
   {
     if(textHasStarted==true)
     {
-      testChar[count]=str1[i];
+      testChar[count]=source_string[i];
       count++;
     }
 
-    if(str1[i]!=' ' && textHasStarted==false)
+    if(source_string[i]!=' ' && textHasStarted==false)
     {
-      testChar[0]=str1[i];
+      testChar[0]=source_string[i];
       textHasStarted=true;
       count++;
     }
@@ -38,6 +40,7 @@ void trim(char* str1,char* trimmed1)
   }
   testChar[count]='\0';
 
+  // Remove trailing blanks
   textHasStarted=false;
 
   for(int i=(int)strlen(testChar)-1;i>0;i--)
@@ -49,6 +52,6 @@ void trim(char* str1,char* trimmed1)
     }
   }
 
-  strcpy(trimmed1,testChar);
+  strcpy(trimmed_string,testChar);
 
 }
