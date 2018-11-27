@@ -16,9 +16,9 @@
 void trim(char* str1,char* trimmed1)
 {
 
-char testChar[STRLEN];
-bool textHasStarted=false;
-int count=0;
+  char testChar[STRLEN];
+  bool textHasStarted=false;
+  int count=0;
 
   for(int i=0;i<(int)strlen(str1);i++)
   {
@@ -26,7 +26,6 @@ int count=0;
     {
       testChar[count]=str1[i];
       count++;
-      testChar[count]='\0';
     }
 
     if(str1[i]!=' ' && textHasStarted==false)
@@ -37,6 +36,7 @@ int count=0;
     }
 
   }
+  testChar[count]='\0';
 
   textHasStarted=false;
 
