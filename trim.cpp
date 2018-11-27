@@ -17,38 +17,35 @@ void trim(char* str1,char* trimmed1)
 {
 
 char testChar[STRLEN];
-bool textStart=false;
+bool textHasStarted=false;
 int count=0;
 
   for(int i=0;i<(int)strlen(str1);i++)
   {
-    if(textStart==true)
+    if(textHasStarted==true)
     {
       testChar[count]=str1[i];
       count++;
-      if(i<(int)strlen(str1))
-      {
-          testChar[count]='\0';
-      }
+      testChar[count]='\0';
     }
 
-    if(str1[i]!=' '&&textStart==false)
+    if(str1[i]!=' ' && textHasStarted==false)
     {
       testChar[0]=str1[i];
-      textStart=true;
+      textHasStarted=true;
       count++;
     }
 
   }
 
-  textStart=false;
+  textHasStarted=false;
 
   for(int i=(int)strlen(testChar)-1;i>0;i--)
   {
-    if(testChar[i]!=' '&&textStart==false)
+    if(testChar[i]!=' '&&textHasStarted==false)
     {
       testChar[i+1]='\0';
-      textStart=true;
+      textHasStarted=true;
     }
   }
 
