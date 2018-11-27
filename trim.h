@@ -10,3 +10,12 @@
  * Interface for trim
  * ----------------------------------------------------------
  */
+#ifndef ___TRIM_H
+#define ___TRIM_H
+
+//wäre dieser wert zu klein könnte man des größten vorkommenden teststring nicht einsetzen
+#define STRLEN 16
+
+void trim(char* str,char* trimmed);
+
+#endif
