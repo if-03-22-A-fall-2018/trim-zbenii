@@ -17,5 +17,7 @@
 #define STRLEN 16
 
 void trim(char* str,char* trimmed);
+void remove_leading_blanks(char* source,char testChar[]);
+void remove_trailing_blanks(char testChar[]);
 
 #endif

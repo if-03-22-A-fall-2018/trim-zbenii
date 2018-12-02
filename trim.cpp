@@ -15,11 +15,15 @@
 
 void trim(char* source_string, char* trimmed_string)
 {
-
   char testChar[STRLEN];
+  remove_leading_blanks(source_string,testChar);
+  remove_trailing_blanks(testChar);
+  strcpy(trimmed_string,testChar);
+}
 
-  // Remove leading blanks
-  // remove_leading_blanks(string, testChar);
+void remove_leading_blanks(char* source_string, char testChar[])
+{
+
   bool textHasStarted=false;
   int count=0;
   for(int i=0;i<(int)strlen(source_string);i++)
@@ -40,8 +44,11 @@ void trim(char* source_string, char* trimmed_string)
   }
   testChar[count]='\0';
 
-  // Remove trailing blanks
-  textHasStarted=false;
+}
+
+void remove_trailing_blanks(char testChar[])
+{
+  bool textHasStarted=false;
 
   for(int i=(int)strlen(testChar)-1;i>0;i--)
   {
@@ -51,7 +58,5 @@ void trim(char* source_string, char* trimmed_string)
       textHasStarted=true;
     }
   }
-
-  strcpy(trimmed_string,testChar);
 
 }
