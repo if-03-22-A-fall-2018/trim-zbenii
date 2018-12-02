@@ -17,9 +17,11 @@ int main(int argc, char const *argv[]) {
   printf("\n");
   printf("\n");
 
+/*
   char test_string_trimmed[512];
-  trim(test_string,test_string_trimmed);
-  printf("%s\n",test_string_trimmed);
+  */
+  trim(test_string,test_string);
+  printf("%s\n",test_string);
 
   return 0;
 }
